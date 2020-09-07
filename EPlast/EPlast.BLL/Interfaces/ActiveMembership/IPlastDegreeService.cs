@@ -53,5 +53,9 @@ namespace EPlast.BLL.Interfaces.ActiveMembership
         /// <param name="plastDegreeId">Plast degree id</param>
         /// <returns>A bool value that says that degree  was changed to current</returns>
         public Task<bool> SetPlastDegreeForUserAsCurrentAsync(string userId, int plastDegreeId);
+        /// <summary>
+        /// Adds plast degrees that depends on age for all users (senior platoon supporter degree)
+        /// </summary>
+        public Task AddSeniorPlastSupporterDegreeForAllUsersAsync();
     }
 }

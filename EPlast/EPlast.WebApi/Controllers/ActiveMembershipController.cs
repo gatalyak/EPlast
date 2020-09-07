@@ -1,7 +1,6 @@
 ﻿using EPlast.BLL.DTO.ActiveMembership;
 using EPlast.BLL.Interfaces.ActiveMembership;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 
 namespace EPlast.WebApi.Controllers
@@ -77,6 +76,14 @@ namespace EPlast.WebApi.Controllers
 
             return BadRequest();
         }
+        [HttpPost("degree/addAgeDegree")]
+        public async Task<IActionResult> AddSeniorPlatoonSupporterDegreeForAllUsers()
+        {
+            await _plastDegreeService.AddSeniorPlastSupporterDegreeForAllUsersAsync();
+                return NoContent();
+  
+        }
+
 
     }
 }

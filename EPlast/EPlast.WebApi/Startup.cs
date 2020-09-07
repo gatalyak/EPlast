@@ -333,11 +333,13 @@ namespace EPlast.WebApi
                 endpoints.MapControllers();
             });
             app.UseHangfireDashboard();
+            /*
             recurringJobManager.AddOrUpdate("Run every day",
-                () => serviceProvider.GetService<IPlastDegreeService>().GetDergeesAsync(),
-             "59 23 * * *",
+                () => serviceProvider.GetService<IPlastDegreeService>().AddSeniorPlatoonSupporterDegreeForAllUsersAsync(),
+             "* * * * *",
              TimeZoneInfo.Local
              );
+             */
             CreateRoles(serviceProvider).Wait();
         }
         private async Task CreateRoles(IServiceProvider serviceProvider)
