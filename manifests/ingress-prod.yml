@@ -15,7 +15,12 @@ spec:
   - host: eplast2.westeurope.cloudapp.azure.com
     http:
       paths:
-      - path: /
+      - path: /api
         backend:
           serviceName: eplastapi
           servicePort: 5000
+      - path: /
+         frontend:
+           serviceName: eplastweb
+           servicePort: 80
+      
