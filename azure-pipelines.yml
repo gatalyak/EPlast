@@ -65,7 +65,7 @@ stages:
       displayName: Restore
       inputs:
         command: restore
-        projects: '$(Parameters.RestoreBuildProjects)'
+        projects: 'EPlast/EPlast.sln'
 
 - stage: Deploy
   displayName: Deploy stage
