@@ -64,7 +64,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'EPlast'
+    environment: 'EPlast2'
     strategy:
       runOnce:
         deploy:
