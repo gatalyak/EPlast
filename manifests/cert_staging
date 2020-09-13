@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: tls-secret-stg
+  namespace: default
+spec:
+  secretName: tls-secret-stg
+  dnsNames:
+    - eplast2.westeurope.cloudapp.azure.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - eplast2.westeurope.cloudapp.azure.com
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
