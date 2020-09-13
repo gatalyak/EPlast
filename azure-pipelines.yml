@@ -26,7 +26,7 @@ variables:
 
   # Agent VM image name
 - name: vmImageName
-  value: 'ubuntu-latest'
+  value: 'vs2017-win2016'
   
   # Name of the new namespace being created to deploy the PR changes.
 - name: k8sNamespaceForPR
