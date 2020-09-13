@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+namespace: eplast2
+metadata:
+  name: routing-for-eplast
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: eplast2.westeurope.cloudapp.azure.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: eplastapi
+          servicePort: 5000
