@@ -5,7 +5,12 @@ metadata:
   name: routing-for-eplast
   annotations:
     kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
+  tls:
+  - hosts:
+      - eplast2.westeurope.cloudapp.azure.com
+    secretName: tls-secret-stg
   rules:
   - host: eplast2.westeurope.cloudapp.azure.com
     http:
