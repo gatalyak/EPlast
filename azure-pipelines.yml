@@ -64,7 +64,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'IrynaZavushchakEPlast.eplast'
+    environment: 'Eplast'
     strategy:
       runOnce:
         deploy:
