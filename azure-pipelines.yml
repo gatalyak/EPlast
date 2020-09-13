@@ -67,6 +67,11 @@ stages:
         command: restore
         projects: 'EPlast/EPlast.sln'
     - task: DotNetCoreCLI@2
+      displayName: Build
+      inputs:
+        projects: 'EPlast/EPlast.sln'
+        arguments: '--configuration $(BuildConfiguration)'
+    - task: DotNetCoreCLI@2
       displayName: 'Add package coverlet.msbuild'
       inputs:
         command: custom
