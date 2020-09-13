@@ -26,7 +26,7 @@ variables:
 
   # Agent VM image name
 - name: vmImageName
-  value: 'windows-latest'
+  value: 'ubuntu-latest'
   
   # Name of the new namespace being created to deploy the PR changes.
 - name: k8sNamespaceForPR
@@ -49,10 +49,23 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
-          
+          $(tag)          
     - upload: manifests
-      artifact: manifests
+      artifact: manifests    
+- stage: Test
+  displayName: Test stage
+  dependsOn: []
+  jobs:
+  - job: Test
+    displayName: Test
+    pool:
+      vmImage: 'vs2017-win2016'
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: Restore
+      inputs:
+        command: restore
+        projects: '$(Parameters.RestoreBuildProjects)'
 
 - stage: Deploy
   displayName: Deploy stage
