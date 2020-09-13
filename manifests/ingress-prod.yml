@@ -19,7 +19,7 @@ spec:
         backend:
           serviceName: eplastapi
           servicePort: 5000
-      - path: /
+      - path: /api2
         backend:
           serviceName: eplastweb
           servicePort: 80
