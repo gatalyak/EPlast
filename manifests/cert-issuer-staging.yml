@@ -5,7 +5,7 @@ metadata:
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    email: gatalyak@yahoo.com
+    email: ___EmailCert___
     privateKeySecretRef:
       name: letsencrypt-staging
     solvers:
