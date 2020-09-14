@@ -128,7 +128,10 @@ stages:
               action: deploy
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
-                $(Pipeline.Workspace)/manifests/service.yml
+                $(Pipeline.Workspace)/manifests/cert-issuer-prod.yml
+                $(Pipeline.Workspace)/manifests/cert-prod.yml                
+                $(Pipeline.Workspace)/manifests/ingress-prod.yml
+#                $(Pipeline.Workspace)/manifests/service.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
