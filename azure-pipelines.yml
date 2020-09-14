@@ -87,7 +87,7 @@ stages:
         projects: |
          EPlast/EPlast.XUnitTest/EPlast.XUnitTest.csproj
          EPlast/EPlast.Tests/EPlast.Tests.csproj
-        arguments: '--configuration $(BuildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Include="[EPlast.WebApi]*Controllers*%2c[EPlast.BLL]*" /p:Exclude="[EPlast.DataAccess]*%2c[EPlast.Resources]*" --logger trx'
+        arguments: '--configuration $(BuildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Include="[EPlast.WebApi]*Controllers*%2c[EPlast.BLL]*Services*" /p:Exclude="[EPlast.DataAccess]*%2c[EPlast.Resources]*" --logger trx'
         publishTestResults: false
 
 - stage: Deploy
