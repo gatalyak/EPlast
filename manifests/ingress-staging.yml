@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - ___SiteDnsName___
+      - eplast2.westeurope.cloudapp.azure.com
     secretName: tls-secret-stg
   rules:
-  - host: ___SiteDnsName___
+  - host: eplast2.westeurope.cloudapp.azure.com
     http:
       paths:
       - path: /api
