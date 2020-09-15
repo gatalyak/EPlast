@@ -130,6 +130,8 @@ stages:
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml
                 $(Pipeline.Workspace)/manifests/ingress-prod.yml
+                $(Pipeline.Workspace)/manifests/redis-master-deployment.yaml
+                $(Pipeline.Workspace)/manifests/redis-master-service.yaml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
